@@ -13,15 +13,13 @@ public class main {
 		}
 
 		System.out.println("Unsorted array of size: " + size);
-		printarray(array,size);
-
+		printarray(array, size);
 
 		// call quick sort method, output list once again
 		quicksort(array, 0, size - 1);
 
 		System.out.println("Sorted array of size: " + size);
 		printarray(array, size);
-
 
 	}
 
@@ -32,6 +30,7 @@ public class main {
 			}
 			System.out.print(array[i] + ",");
 		}
+		System.out.println("");
 	}
 
 	public static void quicksort(int array[], int start, int end) {
@@ -52,12 +51,11 @@ public class main {
 		for (int i = start + 1; i <= end; i++) {
 			if (array[i] < pivot) {
 				// call swap
-				array[wall + 1] = array[i];
-				array[wall] = array[wall + 1];
+				array[i] = array[wall + 1];
+				array[wall + 1] = array[wall];
 				wall++;
 			}
 		}
-
 		return wall;
 	}
 }
